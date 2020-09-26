@@ -4,13 +4,12 @@ import 'package:willfood/config.dart';
 import 'package:logger/logger.dart';
 
 import 'core/domain/service/category/category.service.dart';
+import 'core/domain/service/meal/meal.service.dart';
 
 class Initializer {
   static Future<void> init() async {
     _initDio();
     _initServices();
-    // _initGetIn();
-    // _initStores();
   }
 
   static void _initDio() async {
@@ -27,7 +26,9 @@ class Initializer {
     Dio dio = getIt.get<Dio>();
 
     CategoryService categoryService = CategoryService(dio);
+    MealService mealService = MealService(dio);
 
     getIt.registerSingleton<CategoryService>(categoryService);
+    getIt.registerSingleton<MealService>(mealService);
   }
 }

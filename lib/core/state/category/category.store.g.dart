@@ -47,6 +47,21 @@ mixin _$CategoryStore on _CategoryStore, Store {
     });
   }
 
+  final _$selectedCategoryAtom = Atom(name: '_CategoryStore.selectedCategory');
+
+  @override
+  Category get selectedCategory {
+    _$selectedCategoryAtom.reportRead();
+    return super.selectedCategory;
+  }
+
+  @override
+  set selectedCategory(Category value) {
+    _$selectedCategoryAtom.reportWrite(value, super.selectedCategory, () {
+      super.selectedCategory = value;
+    });
+  }
+
   final _$_CategoryStoreActionController =
       ActionController(name: '_CategoryStore');
 
@@ -62,9 +77,21 @@ mixin _$CategoryStore on _CategoryStore, Store {
   }
 
   @override
+  void setSelectedCategory(Category category) {
+    final _$actionInfo = _$_CategoryStoreActionController.startAction(
+        name: '_CategoryStore.setSelectedCategory');
+    try {
+      return super.setSelectedCategory(category);
+    } finally {
+      _$_CategoryStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 isLoading: ${isLoading},
+selectedCategory: ${selectedCategory},
 categories: ${categories}
     ''';
   }

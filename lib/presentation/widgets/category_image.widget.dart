@@ -28,23 +28,14 @@ class CategoryImage extends StatelessWidget {
               height: height != null ? height : double.infinity,
               width: width != null ? width : double.infinity,
               decoration: BoxDecoration(borderRadius: borderRadius),
-              child: CachedNetworkImage(
-                fadeOutCurve: Curves.easeIn,
-                fit: BoxFit.cover,
-                imageUrl: url,
-                // placeholder: (context, url) =>
-                //     Image.asset("assets/images/image_placeholder_500x300.png"),
-                errorWidget: (context, url, error) => Icon(Icons.error),
-              )
-              // child: url != null
-              //     ? CachedNetworkImage(
-              //         fadeOutCurve: Curves.easeIn,
-              //         fit: BoxFit.cover,
-              //         imageUrl: url,
-              //         placeholder: (context, url) => Image.asset("assets/images/image_placeholder_500x300.png"),
-              //         errorWidget: (context, url, error) => Icon(Icons.error),
-              //       )
-              //     : Image.asset("assets/images/image_placeholder_500x300.png"),
+              child: url != null
+                  ? CachedNetworkImage(
+                      fadeOutCurve: Curves.easeIn,
+                      fit: BoxFit.cover,
+                      imageUrl: url,
+                      errorWidget: (context, url, error) => Icon(Icons.error),
+                    )
+                  : Image.asset("assets/images/image_placeholder_500x300.png"),
               ),
         ),
         Opacity(

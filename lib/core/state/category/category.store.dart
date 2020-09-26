@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
 import 'package:willfood/core/domain/service/category/category.service.dart';
@@ -18,17 +16,19 @@ abstract class _CategoryStore with Store {
   @observable
   bool isLoading = false;
 
+  @observable
+  Category selectedCategory;
+
   @computed
-  List<Category> get categories {
-    if (_categories == null){
-      return null;
-    }
-    return _categories.categories;
-  } 
+  List<Category> get categories =>
+      _categories == null ? null : _categories.categories;
 
   @action
   void setIsLoading(bool value) => isLoading = value;
-  
+
+  @action
+  void setSelectedCategory(Category category) => selectedCategory = category;
+
   Future<void> getAllCateories() async {
     try {
       setIsLoading(true);
