@@ -68,25 +68,28 @@ class CategoryItem extends StatelessWidget {
                     ],
                   ),
                 ),
-                this.backAction ?
-                Positioned(
-                  top: 10,
-                  left: 10,
-                  child: InkWell(
-                    onTap: () => Navigator.of(context).pop(),
-                    child: Material(
-                      elevation: 3,
-                      shape: CircleBorder(),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white12, shape: BoxShape.circle),
-                        width: 35,
-                        height: 35,
-                        child: Icon(Icons.arrow_back, color: Colors.black45),
-                      ),
-                    ),
-                  ),
-                ): Container()
+                this.backAction
+                    ? Positioned(
+                        top: 10,
+                        left: 10,
+                        child: InkWell(
+                          onTap: () => Navigator.of(context).pop(),
+                          child: Material(
+                            elevation: 3,
+                            shape: CircleBorder(),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white12,
+                                  shape: BoxShape.circle),
+                              width: 35,
+                              height: 35,
+                              child:
+                                  Icon(Icons.arrow_back, color: Colors.black45),
+                            ),
+                          ),
+                        ),
+                      )
+                    : Container()
               ],
             ),
           ),

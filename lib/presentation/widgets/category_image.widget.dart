@@ -25,18 +25,18 @@ class CategoryImage extends StatelessWidget {
         ClipRRect(
           borderRadius: borderRadius,
           child: Container(
-              height: height != null ? height : double.infinity,
-              width: width != null ? width : double.infinity,
-              decoration: BoxDecoration(borderRadius: borderRadius),
-              child: url != null
-                  ? CachedNetworkImage(
-                      fadeOutCurve: Curves.easeIn,
-                      fit: BoxFit.cover,
-                      imageUrl: url,
-                      errorWidget: (context, url, error) => Icon(Icons.error),
-                    )
-                  : Image.asset("assets/images/image_placeholder_500x300.png"),
-              ),
+            height: height != null ? height : double.infinity,
+            width: width != null ? width : double.infinity,
+            decoration: BoxDecoration(borderRadius: borderRadius),
+            child: url != null
+                ? CachedNetworkImage(
+                    fadeOutCurve: Curves.easeIn,
+                    fit: BoxFit.cover,
+                    imageUrl: url,
+                    errorWidget: (context, url, error) => Icon(Icons.error),
+                  )
+                : Image.asset("assets/images/image_placeholder_500x300.png"),
+          ),
         ),
         Opacity(
           opacity: gradientOpacity ?? 0,

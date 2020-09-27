@@ -131,7 +131,8 @@ class CategoryScreen extends StatelessWidget {
                                 addAction: () => cartStore.addMealOnCart(meal),
                                 removeAction: () =>
                                     cartStore.removeOneOfthisMealOfCart(meal),
-                                clearAction: () => cartStore.removeThisMealOfCart(meal),
+                                clearAction: () =>
+                                    cartStore.removeThisMealOfCart(meal),
                               );
                             },
                           ),

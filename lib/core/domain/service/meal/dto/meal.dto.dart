@@ -9,8 +9,7 @@ class Meals {
 
   Meals({this.meals});
 
-  factory Meals.fromJson(Map<String, dynamic> json) =>
-      _$MealsFromJson(json);
+  factory Meals.fromJson(Map<String, dynamic> json) => _$MealsFromJson(json);
 
   Map<String, dynamic> toJson() => _$MealsToJson(this);
 }
@@ -23,8 +22,7 @@ class Meal {
 
   Meal({this.idMeal, this.strMeal, this.strMealThumb});
 
-  factory Meal.fromJson(Map<String, dynamic> json) =>
-      _$MealFromJson(json);
+  factory Meal.fromJson(Map<String, dynamic> json) => _$MealFromJson(json);
 
   Map<String, dynamic> toJson() => _$MealToJson(this);
 }

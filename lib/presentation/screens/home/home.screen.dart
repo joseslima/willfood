@@ -85,7 +85,9 @@ class _HomeScreenState extends State<HomeScreen> {
               itemBuilder: (context, index) {
                 Category category = categories[index];
 
-                EdgeInsets padding = index == 0 ? EdgeInsets.all(20) :EdgeInsets.only(bottom: 20, left: 20, right: 20);
+                EdgeInsets padding = index == 0
+                    ? EdgeInsets.all(20)
+                    : EdgeInsets.only(bottom: 20, left: 20, right: 20);
                 return CategoryItem(
                   category: category,
                   position: index,

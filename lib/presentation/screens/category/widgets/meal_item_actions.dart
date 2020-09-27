@@ -22,7 +22,7 @@ class MealItemActions extends StatelessWidget {
               Icons.remove_shopping_cart,
               color: Colors.black26,
             ),
-             clearAction),
+            clearAction),
         SizedBox(
           width: 20,
         ),
