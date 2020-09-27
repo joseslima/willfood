@@ -10,6 +10,7 @@ class CategoryItem extends StatelessWidget {
       {Key key,
       @required this.category,
       @required this.position,
+      this.backAction = false,
       this.onTap,
       this.padding,
       this.height})
@@ -20,6 +21,7 @@ class CategoryItem extends StatelessWidget {
   final Function onTap;
   final EdgeInsets padding;
   final double height;
+  final bool backAction;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +67,26 @@ class CategoryItem extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
+                this.backAction ?
+                Positioned(
+                  top: 10,
+                  left: 10,
+                  child: InkWell(
+                    onTap: () => Navigator.of(context).pop(),
+                    child: Material(
+                      elevation: 3,
+                      shape: CircleBorder(),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white12, shape: BoxShape.circle),
+                        width: 35,
+                        height: 35,
+                        child: Icon(Icons.arrow_back, color: Colors.black45),
+                      ),
+                    ),
+                  ),
+                ): Container()
               ],
             ),
           ),
