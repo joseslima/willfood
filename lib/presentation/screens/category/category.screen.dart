@@ -8,7 +8,6 @@ import 'package:willfood/core/state/category/category.store.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:willfood/core/state/meal/meal.store.dart';
 import 'package:willfood/presentation/screens/category/widgets/meal_item_actions.dart';
-import 'package:willfood/presentation/widgets/category_image.widget.dart';
 import 'package:willfood/presentation/widgets/category_item.widget.dart';
 
 class CategoryScreen extends StatelessWidget {

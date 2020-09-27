@@ -1,8 +1,5 @@
-import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
-import 'package:willfood/core/domain/service/category/dto/category.dto.dart';
 import 'package:willfood/core/domain/service/meal/dto/meal.dto.dart';
-import 'package:willfood/core/domain/service/meal/meal.service.dart';
 
 part 'cart.store.g.dart';
 
@@ -17,7 +14,6 @@ abstract class _CartStore with Store {
 
   @action
   void addMealOnCart(Meal meal) {
-    print("OKE");
     String idMeal = meal.idMeal;
     if (mealsCounter.containsKey(idMeal)) {
       mealsCounter[idMeal] += 1;
@@ -51,7 +47,6 @@ abstract class _CartStore with Store {
 
   @action
   void cleanCart() {
-    print("opa");
     _meals.clear();
     mealsCounter.clear();
   }
