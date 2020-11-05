@@ -1,6 +1,6 @@
 # willfood
 
-Small project using MobX, Dio and Retrofit
+Small app using MobX, Dio and Retrofit
 
 ## Before start
 We make use of some packages that generate code automatically, these are responsible for
